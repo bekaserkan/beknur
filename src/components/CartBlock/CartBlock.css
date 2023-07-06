@@ -1,0 +1,26 @@
+.card_block {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.card_block .cart_icon {
+  cursor: pointer;
+  position: relative;
+}
+.card_block .price {
+  margin-left: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+}
+.card_block .cart_btn {
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  background: var(--ex);
+  border-radius: 5px;
+  cursor: pointer;
+}

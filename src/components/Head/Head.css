@@ -1,0 +1,40 @@
+.head {
+  margin-top: 20px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  border-top: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+}
+.head .div {
+  width: 100%;
+  display: flex;
+}
+.head .icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ex);
+  border-radius: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.head .search {
+  outline: none;
+  width: 60%;
+  padding: 10px;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+  background: hsl(293, 100%, 90%);
+  font-size: 20px;
+  color: #000;
+}
+.head .search::placeholder {
+  color: rgb(192, 103, 178);
+  font-weight: bold;
+}

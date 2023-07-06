@@ -1,0 +1,24 @@
+.card_item {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: linear-gradient(134deg, #8100ae 0%, #fff 56.25%, #00fff0 100%);
+  padding: 5px 10px;
+}
+.card_item .price {
+  display: flex;
+  justify-content: flex-end;
+}
+.card_item .title {
+  font-size: 20px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+.delete_icon {
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  cursor: pointer;
+}

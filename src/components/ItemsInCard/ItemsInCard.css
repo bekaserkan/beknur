@@ -1,0 +1,19 @@
+.items_in_cart {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #a5dc86;
+  border-radius: 15px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  left: 5px;
+  top: -5px;
+  border: 0.5px solid rgb(193, 193, 193);
+}
+.items_in_cart p {
+  color: var(--ex);
+  font-weight: bold;
+}

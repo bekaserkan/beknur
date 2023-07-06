@@ -1,0 +1,66 @@
+.game_page {
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+}
+.game_page p {
+  color: #000;
+}
+.game_page .image {
+  width: 100%;
+  min-height: auto;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #cdcdcd;
+}
+.game_page .image img {
+  width: 30%;
+}
+.game_page .details {
+  width: 100%;
+  min-height: auto;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cdcdcd;
+}
+.game_page .rate {
+  width: 40px;
+  height: 40px;
+  background: var(--ex);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.game_page .title {
+  padding: 5px 0;
+  border-bottom: 1px solid #cdcdcd;
+}
+.game_page .price {
+  display: flex;
+  align-items: center;
+}
+.game_page .price p {
+  margin-left: 10px;
+}
+.game_page .about {
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px solid #cdcdcd;
+} 
+.game_page .category{
+  padding: 15px 0;
+  border-bottom: 1px solid #cdcdcd;
+}
+.game_page .count{
+  padding: 15px 0;
+}
+.game_page .btn{
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 15px 0;
+}

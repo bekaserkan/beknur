@@ -1,0 +1,239 @@
+.header {
+  width: 100%;
+  min-height: 300px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 30px;
+  border-bottom: 1px solid var(--ex);
+  background: rgba(87, 87, 87, 0.826) url("../../img/pngwing\ 1.svg") no-repeat;
+  background-blend-mode: darken;
+}
+.header .save {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.header .wrapper {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .logo {
+  min-width: 12%;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+.header .logo h1 {
+  margin-left: 10px;
+  color: var(--ex);
+  cursor: pointer;
+}
+.header .logo img {
+  width: 50px;
+  filter: drop-shadow(3px 5px 15px var(--ex));
+  cursor: pointer;
+}
+.header .sections {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.header .sections h3 {
+  font-weight: 600;
+  color: #ffffff;
+  position: relative;
+  transition: 0.2s ease;
+}
+.header .sections h3:hover::before {
+  transform: scaleX(1);
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+.header .sections h3::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s;
+}
+.header .active {
+  position: relative;
+}
+.header .active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  bottom: -1px;
+  left: 0;
+}
+.header .contacts {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: flex-end;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: end;
+}
+.header .contacts h1,
+.header .contacts h2 {
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+.header .saved a,
+.header .contacts a {
+  color: #ffffff;
+  text-decoration: underline #ee00ff;
+}
+.header .contacts .icons {
+  margin-top: 10px;
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+.header .contacts .icons .icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cdcdcd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.header .contacts .icons .icon:hover {
+  background: var(--ex);
+}
+.header .saved {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.header .subscription h1 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+.header .subscription input {
+  width: 60%;
+  height: 67px;
+  border-radius: 10px;
+  padding-left: 22px;
+  color: cadetblue;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  background: #ffffff;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.header .block {
+  display: flex;
+}
+.header .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.header .subscription .send {
+  width: 35%;
+  height: 67px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 15px;
+  background: linear-gradient(304deg, #ee00ff 0%, #87eee8 100%);
+  box-shadow: 0px 0px 50px 0px #00c2ff;
+  margin-bottom: 15px;
+}
+.header .subscription p {
+  width: 70%;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px 40px;
+  }
+  .header .saved {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .subscription {
+    display: flex;
+    flex-direction: column;
+  }
+  .header .subscription input,
+  .header .subscription .send {
+    width: 100%;
+  }
+  .header .subscription p {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 750px) {
+  .header .sections {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header .sections .section {
+    margin-left: auto;
+    text-align: end;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .header .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header .logo {
+    display: flex;
+    flex-direction: column;
+  }
+  .header .sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header .sections .section {
+    margin: auto;
+    margin-bottom: 15px;
+  }
+}
