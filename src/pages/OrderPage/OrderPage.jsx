@@ -5,7 +5,7 @@ import OrderItem from "../../components/OrderItem/OrderItem";
 import { calcTotalPrice } from "../../components/utils/utils";
 import { useNavigate } from "react-router-dom";
 
-const OrderPage = () => {
+const OrderPage = ({ value }) => {
   const navigate = useNavigate();
   const items = useSelector((state) => state.cart.itemsInCart);
 
@@ -19,9 +19,14 @@ const OrderPage = () => {
   return (
     <div className="order_page">
       <div className="left">
-        {items.map((game) => (
-          <OrderItem key={game.id} game={game} />
-        ))}
+        {items
+          .filter((obj) => {
+            const fullName = obj.title.toLowerCase();
+            return fullName.includes(value.toLowerCase());
+          })
+          .map((game) => (
+            <OrderItem key={game.id} game={game} />
+          ))}
       </div>
       <div className="right">
         <div className="price">

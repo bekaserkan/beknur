@@ -36,7 +36,7 @@ const ShopHome = () => {
           element={<Shop value={value} loading={loading} data={data} />}
         />
         <Route path="/api/:title" element={<GamePage />} />
-        <Route path="/order" element={<OrderPage />} />
+        <Route path="/order" element={<OrderPage value={value} />} />
         <Route path="*" element={<NotFaundPage />} />
       </Routes>
     </div>

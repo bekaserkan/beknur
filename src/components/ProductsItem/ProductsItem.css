@@ -70,7 +70,14 @@
 }
 
 @media (max-width: 850px) {
+  .products_item {
+    width: 45%;
+  }
   .details {
+    display: flex;
+    flex-direction: column;
+  }
+  .products_item .add {
     display: flex;
     flex-direction: column;
   }
@@ -80,6 +87,9 @@
   }
 }
 @media (max-width: 650px) {
+  .products_item {
+    width: 100%;
+  }
   .products_item .add {
     display: flex;
     flex-direction: column;

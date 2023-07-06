@@ -11,7 +11,7 @@
 }
 
 body {
-  background: #ec74ff;
+  background: #f4aaff;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -40,5 +40,27 @@ a {
 @media (max-width: 1400px) {
   .app_comp {
     max-width: 85%;
+  }
+}
+@media (max-width: 850px) {
+  h1 {
+    font-size: 5px;
+  }
+  p {
+    font-size: 13px;
+  }
+  a {
+    font-size: 13px;
+  }
+}
+@media (max-width: 650px) {
+  h1 {
+    font-size: 5px;
+  }
+  p {
+    font-size: 10px;
+  }
+  a {
+    font-size: 10px;
   }
 }

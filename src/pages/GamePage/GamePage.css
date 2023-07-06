@@ -37,14 +37,15 @@
   border-radius: 50%;
 }
 .game_page .title {
-  padding: 5px 0;
+  padding: 15px 0;
   border-bottom: 1px solid #cdcdcd;
 }
 .game_page .price {
   display: flex;
   align-items: center;
 }
-.game_page .price p {
+.game_page h1,
+.game_page p {
   margin-left: 10px;
 }
 .game_page .about {
@@ -63,4 +64,19 @@
   width: 100%;
   margin-bottom: 50px;
   padding: 15px 0;
+}
+.game_page .case{
+  display: flex; 
+  align-items: center;
+  margin-bottom: 10px;   
+}
+.game_page .case p{
+  font-weight: bold;
+}
+.game_page .title h1{
+  font-size: 23px;
+  font-weight: 500;
+}
+.game_page .m{
+  margin-left: 45px;
 }

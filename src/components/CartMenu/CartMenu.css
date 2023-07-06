@@ -1,34 +1,104 @@
-.card_manu {
-  position: fixed;
-  top: 0;
+.menu {
+  bottom: 0;
   left: 0;
-  background-color: rgb(36, 36, 41);
-  width: 400px;
-  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
   z-index: 10;
-  border-radius: 15px;
+  background: #00000081;
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.card_manu {
+  width: 600px;
+  min-height: 250px;
+  max-height: 650px;
+  padding: 20px;
+  background: #ffffff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  animation: modalSlideIn 0.3s ease-in-out;
+}
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 .card_manu .arrenge {
-  margin-top: 20px;
-  padding: 20px 0;
-  border-top: 1px solid rgb(255, 255, 255, 0.4);
+  width: 100%;
+  margin-top: 15px; 
+  padding-top: 15px;
+  border-top: 1.5px solid #cdcdcd;
 }
 .card_manu .total_price {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
-.card_manu .game_list {
+.card_manu .save{
   width: 100%;
-  max-height: 500px;
-  overflow-x: hidden;
+  padding: 0;
 }
-.card_manu .iks {
-  background: #fff;
+.card_manu .total_price p{
+  color: #000;
+  font-weight: 600;
+}
+.card_manu .thpun{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card_manu .th{
+  display: flex;
+  align-items: center;
   cursor: pointer;
+}
+.card_manu .kesh{
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cdcdcd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.card_manu .name{
+  color: #000;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 1.5px solid #cdcdcd;
+  margin-bottom: 10px;
 }
 .card_manu .save {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.card_manu .not {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_manu .item{
+  width: 100%;
+  max-height: 350px;
+  overflow-x: hidden;
 }
