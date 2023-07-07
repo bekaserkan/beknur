@@ -7,6 +7,8 @@ import NotFaundPage from "../NotFaundPage/NotFaundPage";
 import OrderPage from "../OrderPage/OrderPage";
 import GamePage from "../GamePage/GamePage";
 import Head from "../../components/Head/Head";
+import { Alert2 } from "../../components/UI/sweetAlert/sweetAlert";
+import ElectedPage from "../ElectedPage/ElectedPage";
 
 const ShopHome = () => {
   const [data, setData] = useState([]);
@@ -20,20 +22,23 @@ const ShopHome = () => {
       .then((json) => {
         setData(json);
       })
-      .catch((err) => {
-        console.log(err);
-        alert("Ошибка при получении данных");
+      .catch(() => {
+        Alert2("error", "Отсутствует интернет соединение");
       })
       .finally(() => setLoading(false));
   }, []);
 
   return (
     <div>
-      <Head value={value} onChange={setValue} placeholder={"Введите..."} />
+      <Head value={value} setValue={setValue} placeholder={"Введите..."} />
       <Routes>
         <Route
           index
           element={<Shop value={value} loading={loading} data={data} />}
+        />
+        <Route
+          path="/ElectedPage"
+          element={<ElectedPage value={value} loading={loading} />}
         />
         <Route path="/api/:title" element={<GamePage />} />
         <Route path="/order" element={<OrderPage value={value} />} />

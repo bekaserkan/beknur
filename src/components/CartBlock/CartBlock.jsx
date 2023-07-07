@@ -32,7 +32,7 @@ const CartBlock = ({ isCartMenuVisible, setIsCartMenuVisible }) => {
         {totalPrice > 0 ? (
           <div className="price">
             {" "}
-            <p>{totalPrice}</p> <p style={{ marginLeft: "5px" }}>p</p>{" "}
+            <p>{totalPrice}</p> <p style={{ marginLeft: "5px" }}>$</p>{" "}
           </div>
         ) : null}
       </div>

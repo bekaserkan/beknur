@@ -18,7 +18,7 @@ const CardItem = ({ product }) => {
       </div>
       <div className="wrapper">
         <p>{product.title}</p>
-        <div className="price">{product.price} руб.</div>
+        <div className="price">{product.price} $</div>
       </div>
       <BsTrash3 size={25} className="delete_icon" onClick={handleClick} />
     </div>

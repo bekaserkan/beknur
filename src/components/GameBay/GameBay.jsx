@@ -19,6 +19,7 @@ const GameBay = ({ product }) => {
       Alert("success", "Карзина пополнилась !");
     }
   };
+  
   return (
     <div className="game_bay">
       <Button

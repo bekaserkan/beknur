@@ -1,4 +1,4 @@
-.products_item {
+.elected_item {
   width: 100%;
   margin: 20px auto;
   min-height: 100px;
@@ -7,13 +7,13 @@
   border: 0.5px solid var(--pink);
   box-shadow: 3px 10px 15px cadetblue;
 }
-.products_item p {
+.elected_item p {
   color: #000;
 }
-.products_item .details {
+.elected_item .details {
   display: flex;
 }
-.products_item .image {
+.elected_item .image {
   width: 30%;
   min-height: 100px;
   display: flex;
@@ -21,59 +21,59 @@
   justify-content: center;
   padding: 20px 0;
 }
-.products_item .image img {
+.elected_item .image img {
   width: 50%;
 }
-.products_item .save {
+.elected_item .save {
   width: 70%;
   height: 100%;
   padding: 10px 20px;
 }
-.products_item .content {
+.elected_item .content {
   width: 100%;
   min-height: 10px;
   border: 1px solid #cdcdcd;
 }
-.products_item .title {
+.elected_item .title {
   width: 100%;
   min-height: 20px;
   padding: 3px 5px;
   border-bottom: 1px solid #cdcdcd;
 }
-.products_item .category {
+.elected_item .category {
   width: 100%;
   min-height: 20px;
   padding: 3px 5px;
   border-bottom: 1px solid #cdcdcd;
 }
-.products_item .price {
+.elected_item .price {
   padding: 3px 5px;
 }
-.products_item .add {
+.elected_item .add {
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
 }
-.products_item .button {
+.elected_item .button {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.products_item .eye {
+.elected_item .eye {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.products_item span {
+.elected_item span {
   font-weight: bold;
 }
 
 @media (max-width: 850px) {
-  .products_item {
+  .elected_item {
     width: 45%;
   }
-  .products_item .details {
+  .elected_item .details {
     display: flex;
     flex-direction: column;
   }
@@ -81,16 +81,16 @@
     display: flex;
     flex-direction: column;
   }
-  .products_item .save,
-  .products_item .image {
+  .elected_item .save,
+  .elected_item .image {
     width: 100%;
   }
 }
 @media (max-width: 650px) {
-  .products_item {
+  .elected_item {
     width: 100%;
   }
-  .products_item .add {
+  .elected_item .add {
     display: flex;
     flex-direction: column;
   }

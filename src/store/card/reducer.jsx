@@ -4,6 +4,7 @@ const cartSlice = createSlice({
   name: "card",
   initialState: {
     itemsInCart: [],
+    itemsInProduct: [],
   },
   reducers: {
     setItemInCart: (state, action) => {
@@ -15,10 +16,28 @@ const cartSlice = createSlice({
       );
     },
     deleteItemFrom: (state, action) => {
-      state.itemsInCart = (action.payload)
+      state.itemsInCart = action.payload;
+    },
+    setItemInProduct: (state, action) => {
+      state.itemsInProduct.push(action.payload);
+    },
+    deleteItemFromProduct: (state, action) => {
+      state.itemsInProduct = state.itemsInProduct.filter(
+        (game) => game.id !== action.payload
+      );
+    },
+    deleteItemFromProducts: (state, action) => {
+      state.itemsInProduct = action.payload;
     },
   },
 });
 
-export const { setItemInCart, deleteItemFromCart, deleteItemFrom } = cartSlice.actions;
+export const {
+  setItemInCart,
+  deleteItemFromCart,
+  deleteItemFrom,
+  setItemInProduct,
+  deleteItemFromProduct,
+  deleteItemFromProducts,
+} = cartSlice.actions;
 export default cartSlice.reducer;

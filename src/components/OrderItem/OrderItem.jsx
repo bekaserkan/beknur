@@ -1,28 +1,26 @@
 import React from "react";
 import "./OrderItem.css";
+import { BsTrash3 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { TiDeleteOutline } from "react-icons/ti";
 import { deleteItemFromCart } from "../../store/card/reducer";
 
-const OrderItem = ({ game }) => {
+const OrderItem = ({ data }) => {
   const dispatch = useDispatch();
+
   const handleClick = () => {
-    dispatch(deleteItemFromCart(game.id));
+    dispatch(deleteItemFromCart(data.id));
   };
 
   return (
     <div className="order_item">
-      <div className="title">
-        <p>{game.title}</p>
+      <div className="img">
+        <img src={data.image} />
       </div>
-      <div className="price">
-        <p>{game.price} руб. </p>
-        <TiDeleteOutline
-          size={25}
-          className="delete_icon"
-          onClick={handleClick}
-        />
+      <div className="wrapp">
+        <p>{data.title}</p>
+        <div className="price">{data.price} $ </div>
       </div>
+      <BsTrash3 size={25} className="delete_icon" onClick={handleClick} />
     </div>
   );
 };

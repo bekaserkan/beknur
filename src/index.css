@@ -43,8 +43,11 @@ a {
   }
 }
 @media (max-width: 850px) {
+  label{
+    font-size: 15px;
+  }
   h1 {
-    font-size: 5px;
+    font-size: 15px;
   }
   p {
     font-size: 13px;
@@ -54,9 +57,6 @@ a {
   }
 }
 @media (max-width: 650px) {
-  h1 {
-    font-size: 5px;
-  }
   p {
     font-size: 10px;
   }

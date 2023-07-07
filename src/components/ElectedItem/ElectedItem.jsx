@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./ProductsItem.css";
+import React from "react";
+import "./ElectedItem.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentProduct } from "../../store/products/reducer";
 import GameBay from "../GameBay/GameBay";
-import { VscHeart, VscHeartFilled } from "react-icons/vsc";
+import { VscHeartFilled } from "react-icons/vsc";
 import { TfiEye } from "react-icons/tfi";
 import { Alert } from "../UI/sweetAlert/sweetAlert";
 import {
@@ -12,50 +12,48 @@ import {
   setItemInProduct,
 } from "../../store/card/reducer";
 
-const ProductsItem = ({ items }) => {
+const ElectedItem = ({ product }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [click, setClick] = useState(false);
   const products = useSelector((state) => state.cart.itemsInProduct);
-  const isItemInCart = products.some((item) => item.id === items.id);
+  const isItemInCart = products.some((item) => item.id === product.id);
 
   const handleClick = () => {
-    dispatch(setCurrentProduct(items));
-    navigate(`/ShopHome/api/${items.title}`);
+    dispatch(setCurrentProduct(product));
+    navigate(`/ShopHome/api/${product.title}`);
   };
 
   const handleClickElected = (e) => {
     e.stopPropagation();
     if (isItemInCart) {
-      dispatch(deleteItemFromProduct(items.id));
+      dispatch(deleteItemFromProduct(product.id));
     } else {
-      dispatch(setItemInProduct(items));
+      dispatch(setItemInProduct(product));
       Alert("success", "Добавлено!");
     }
-    setClick(!click);
   };
-
+  
   return (
-    <div className="products_item">
+    <div className="elected_item">
       <div className="details">
         <div className="image">
-          <img src={items.image} />
+          <img src={product.image} />
         </div>
         <div className="save">
           <div className="content">
             <div className="title">
               <p>
-                <span>Название:</span> {items.title}
+                <span>Название:</span> {product.title}
               </p>
             </div>
             <div className="category">
               <p className="cate">
-                <span>Категория:</span> {items.category}
+                <span>Категория:</span> {product.category}
               </p>
             </div>
             <div className="price">
               <p>
-                <span>Цена:</span> {items.price} $
+                <span>Цена:</span> {product.price} $
               </p>
             </div>
           </div>
@@ -65,30 +63,21 @@ const ProductsItem = ({ items }) => {
               <p style={{ marginLeft: "10px" }}>Посмотреть</p>
             </div>
             <div onClick={handleClickElected} className="button">
-              <VscHeart
-                style={{
-                  color: "#9717AC",
-                  display: `${click ? "none" : "block"}`,
-                  cursor: "pointer",
-                }}
-                size={35}
-              />
               <VscHeartFilled
                 style={{
                   color: "#9717AC",
-                  display: `${click ? "block" : "none"}`,
                   cursor: "pointer",
                 }}
                 size={35}
               />
-              <p style={{ marginLeft: "10px" }}> Добавить к любимым </p>
+              <p style={{ marginLeft: "10px" }}> Удалить из любимых </p>
             </div>
           </div>
-          <GameBay product={items} key={items.id} />
+          <GameBay product={product} key={product.id} />
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductsItem;
+export default ElectedItem;

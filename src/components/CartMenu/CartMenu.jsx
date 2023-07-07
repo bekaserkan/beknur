@@ -18,8 +18,8 @@ const CartMenu = ({ items, onClick, set }) => {
   };
 
   const handleDelete = () => {
-    dispatch(deleteItemFrom([]))
-  }
+    dispatch(deleteItemFrom([]));
+  };
 
   return (
     <div className="menu">
@@ -39,10 +39,7 @@ const CartMenu = ({ items, onClick, set }) => {
               <p className="name">Корзина</p>
               <div className="item">
                 {items.map((el) => (
-                  <CardItem
-                    key={el.id}
-                    product={el}
-                  />
+                  <CardItem key={el.id} product={el} />
                 ))}
               </div>
             </div>
@@ -56,7 +53,7 @@ const CartMenu = ({ items, onClick, set }) => {
           <div className="arrenge">
             <div className="total_price">
               <p>Итого:</p>
-              <p>{calcTotalPrice(items)} руб.</p>
+              <p>{calcTotalPrice(items)} $</p>
             </div>
             <div className="save">
               <Button type="primary" size="m" onClick={onClick}>
