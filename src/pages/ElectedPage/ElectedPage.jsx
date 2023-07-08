@@ -28,11 +28,9 @@ const ElectedPage = ({ value, loading }) => {
       {product.length < 1 && (
         <div className="like">
           <p> Ставь лайк любимым продуктам </p>
-          <div className="fire">
             <Button type={"primary"} onClick={() => navigate("/ShopHome")}>
               Перейти в магазин
             </Button>
-          </div>
         </div>
       )}
     </div>

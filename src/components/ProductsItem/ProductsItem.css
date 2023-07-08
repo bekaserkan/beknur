@@ -29,7 +29,7 @@
   height: 100%;
   padding: 10px 20px;
 }
-.products_item .content {
+.products_item .content_item {
   width: 100%;
   min-height: 10px;
   border: 1px solid #cdcdcd;

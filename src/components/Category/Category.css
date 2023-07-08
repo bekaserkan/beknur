@@ -1,0 +1,15 @@
+.category{
+    width: 100%;
+    padding: 15px 50px;
+    border-bottom: 1.5px solid #cdcdcd;
+    display: flex;
+    flex-wrap: wrap;
+}
+.category .box{
+    min-width: 20px;
+    padding: 7px;
+    border-radius: 5px;
+    background: var(--ex);
+    margin-right: 15px;
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductPage.css";
 import GameBay from "../../components/GameBay/GameBay";
 import { GiTwoCoins } from "react-icons/gi";
@@ -6,12 +6,37 @@ import { LuSubtitles } from "react-icons/lu";
 import { ImFileText } from "react-icons/im";
 import { BiCategory } from "react-icons/bi";
 import { MdProductionQuantityLimits } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ProductPage = ({ product }) => {
-  return (
+  const navigate = useNavigate();
+
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 450,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  return product ? (
     <div className="game_page">
-      <div className="image">
-        <img src={product.image} />
+      <div className="image_game">
+        <Slider {...settings} className="slide">
+          <div className="slide_slider">
+            <img src={product.image} />
+          </div>
+          <div className="slide_slider">
+            <img src={product.image} />
+          </div>
+          <div className="slide_slider">
+            <img src={product.image} />
+          </div>
+        </Slider>
       </div>
       <div className="details">
         <div className="case">
@@ -53,6 +78,8 @@ const ProductPage = ({ product }) => {
         <GameBay product={product} />
       </div>
     </div>
+  ) : (
+    navigate("/ShopHome")
   );
 };
 

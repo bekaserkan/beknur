@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductsItem.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -17,32 +17,39 @@ const ProductsItem = ({ items }) => {
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const products = useSelector((state) => state.cart.itemsInProduct);
-  const isItemInCart = products.some((item) => item.id === items.id);
+  const isItemInCart = products.some((el) => el.id === items.id);
 
   const handleClick = () => {
     dispatch(setCurrentProduct(items));
     navigate(`/ShopHome/api/${items.title}`);
   };
 
+  useEffect(() => {
+    if (isItemInCart) {
+      setClick(true);
+    }
+  }, []);
+
   const handleClickElected = (e) => {
     e.stopPropagation();
     if (isItemInCart) {
       dispatch(deleteItemFromProduct(items.id));
+      setClick(false);
     } else {
       dispatch(setItemInProduct(items));
       Alert("success", "Добавлено!");
+      setClick(true);
     }
-    setClick(!click);
   };
 
   return (
     <div className="products_item">
       <div className="details">
-        <div className="image">
-          <img src={items.image} />
-        </div>
+          <div className="image">
+            <img src={items.image} />
+          </div>
         <div className="save">
-          <div className="content">
+          <div className="content_item">
             <div className="title">
               <p>
                 <span>Название:</span> {items.title}

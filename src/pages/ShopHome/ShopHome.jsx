@@ -9,10 +9,15 @@ import GamePage from "../GamePage/GamePage";
 import Head from "../../components/Head/Head";
 import { Alert2 } from "../../components/UI/sweetAlert/sweetAlert";
 import ElectedPage from "../ElectedPage/ElectedPage";
+import Category from "../../components/Category/Category";
 
 const ShopHome = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [cate1, setCate1] = useState(false);
+  const [cate2, setCate2] = useState(false);
+  const [cate3, setCate3] = useState(false);
+  const [cate4, setCate4] = useState(false);
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -34,7 +39,29 @@ const ShopHome = () => {
       <Routes>
         <Route
           index
-          element={<Shop value={value} loading={loading} data={data} />}
+          element={
+            <>
+              <Category
+                cate1={cate1}
+                cate2={cate2}
+                cate3={cate3}
+                cate4={cate4}
+                setCate1={setCate1}
+                setCate2={setCate2}
+                setCate3={setCate3}
+                setCate4={setCate4}
+              />
+              <Shop
+                value={value}
+                loading={loading}
+                data={data}
+                cate1={cate1}
+                cate2={cate2}
+                cate3={cate3}
+                cate4={cate4}
+              />
+            </>
+          }
         />
         <Route
           path="/ElectedPage"

@@ -27,9 +27,9 @@
   background: #ffffff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  animation: modalSlideIn 0.3s ease-in-out;
+  animation: modalSlideInOut 0.3s ease-in-out;
 }
-@keyframes modalSlideIn {
+@keyframes modalSlideInOut {
   from {
     transform: translateY(100px);
   }
