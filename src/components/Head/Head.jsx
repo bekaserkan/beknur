@@ -12,6 +12,7 @@ const Head = ({ value, setValue, placeholder }) => {
   const [isCartMenuVisible, setIsCartMenuVisible] = useState(false);
   const navigate = useNavigate();
   const [search, setSearch] = useState(false);
+  const [icon, setIcon] = useState(false);
 
   return (
     <div className="head">
@@ -20,12 +21,16 @@ const Head = ({ value, setValue, placeholder }) => {
           <FaShopify size={35} style={{ color: "#fff" }} />
         </div>
         <RiSearchLine
-          onClick={() => setSearch(!search)}
+          onClick={() => setSearch(!search) || setIcon(true)}
           className="icon_search"
           style={{
             background: search ? "#9717ac" : "",
             color: search ? "#fff" : "#9717ac",
-            animation: search ? "rotation 0.3s ease" : "",
+            animation: search
+              ? "rotation 0.3s ease"
+              : icon
+              ? "rotationIn 0.3s ease"
+              : "",
           }}
           size={50}
         />

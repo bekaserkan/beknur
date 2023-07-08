@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ProductPage.css";
 import GameBay from "../../components/GameBay/GameBay";
 import { GiTwoCoins } from "react-icons/gi";
@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Button from "../Button/Button";
 
 const ProductPage = ({ product }) => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const ProductPage = ({ product }) => {
         </div>
         <p className="m">{product.description}</p>
       </div>
-      <div className="category">
+      <div className="category_">
         <div className="case">
           <BiCategory color="#9717ac" size={35} />
           <p>Категории</p>
@@ -79,7 +80,12 @@ const ProductPage = ({ product }) => {
       </div>
     </div>
   ) : (
-    navigate("/ShopHome")
+    <div className="Page">
+      <p> Неизвестная ошибка </p>
+      <Button type={"primary"} onClick={() => navigate("/ShopHome")}>
+        Перейти в магазин
+      </Button>
+    </div>
   );
 };
 

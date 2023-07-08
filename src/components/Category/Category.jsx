@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Category.css";
 
 const Category = ({
@@ -11,12 +11,30 @@ const Category = ({
   setCate3,
   setCate4,
 }) => {
+  const [cate, setCate] = useState(true);
+
   return (
     <div className="category">
+      <div
+        style={{ background: cate ? "#9717ac" : "#fff" }}
+        onClick={() =>
+          setCate(!cate) ||
+          setCate1(false) ||
+          setCate2(false) ||
+          setCate3(false) ||
+          setCate4(false)
+        }
+        className="box"
+      >
+        <p style={{ color: cate ? "#fff" : "#9717ac", fontWeight: "bold" }}>
+          All
+        </p>
+      </div>
       <div
         style={{ background: cate1 ? "#9717ac" : "#fff" }}
         onClick={() =>
           setCate1(!cate1) ||
+          setCate(false) ||
           setCate2(false) ||
           setCate3(false) ||
           setCate4(false)
@@ -31,6 +49,7 @@ const Category = ({
         style={{ background: cate2 ? "#9717ac" : "#fff" }}
         onClick={() =>
           setCate2(!cate2) ||
+          setCate(false) ||
           setCate1(false) ||
           setCate3(false) ||
           setCate4(false)
@@ -45,6 +64,7 @@ const Category = ({
         style={{ background: cate3 ? "#9717ac" : "#fff" }}
         onClick={() =>
           setCate3(!cate3) ||
+          setCate(false) ||
           setCate2(false) ||
           setCate1(false) ||
           setCate4(false)
@@ -59,6 +79,7 @@ const Category = ({
         style={{ background: cate4 ? "#9717ac" : "#fff" }}
         onClick={() =>
           setCate4(!cate4) ||
+          setCate(false) ||
           setCate2(false) ||
           setCate3(false) ||
           setCate1(false)
