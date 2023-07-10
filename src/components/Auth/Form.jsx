@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import panth from "../../img/pngwing 1.svg"
+// import panth from "../../img/pngwing 1.svg"
 
 const Form = ({ title, handleClick }) => {
   const [email, setEmail] = useState("");
@@ -7,7 +7,7 @@ const Form = ({ title, handleClick }) => {
 
   return (
     <div className="form" >
-      <img src={panth} />
+      {/* <img src={panth} /> */}
       <input
         type="email"
         value={email}

@@ -8,11 +8,11 @@ import ShopHome from "./ShopHome/ShopHome";
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const isFunctionExecuted = localStorage.getItem("data_");
+  const isFunctionExecuted = localStorage.getItem("da");
 
   if (!isFunctionExecuted) {
     navigate("/login");
-    localStorage.setItem("data_", true);
+    localStorage.setItem("da", true);
   }
 
   return (

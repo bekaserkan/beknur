@@ -82,7 +82,7 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  background: url("../../img/search.png") no-repeat center;
+  /* background: url("../../img/search.png") no-repeat center; */
   background-size: cover;
 }
 .order_page .finish {
