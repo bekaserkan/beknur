@@ -29,7 +29,7 @@ const ProductPage = ({ product }) => {
       <div className="image_game">
         <Slider {...settings} className="slide">
           <div className="slide_slider">
-            <img src={product.image} />
+            <img  src={product.image} />
           </div>
           <div className="slide_slider">
             <img src={product.image} />
