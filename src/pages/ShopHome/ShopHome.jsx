@@ -10,6 +10,7 @@ import Head from "../../components/Head/Head";
 import { Alert2 } from "../../components/UI/sweetAlert/sweetAlert";
 import ElectedPage from "../ElectedPage/ElectedPage";
 import Category from "../../components/Category/Category";
+import Advertising from "../../components/Advertising/Advertising";
 
 const ShopHome = () => {
   const [data, setData] = useState([]);
@@ -51,6 +52,7 @@ const ShopHome = () => {
                 setCate3={setCate3}
                 setCate4={setCate4}
               />
+              <Advertising />
               <Shop
                 value={value}
                 loading={loading}
@@ -67,7 +69,7 @@ const ShopHome = () => {
           path="/ElectedPage"
           element={<ElectedPage value={value} loading={loading} />}
         />
-        <Route path="/api/:title" element={<GamePage />} />
+        <Route path="/:title" element={<GamePage />} />
         <Route path="/order" element={<OrderPage value={value} />} />
         <Route path="*" element={<NotFaundPage />} />
       </Routes>

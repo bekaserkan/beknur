@@ -21,7 +21,7 @@ const ProductsItem = ({ items }) => {
 
   const handleClick = () => {
     dispatch(setCurrentProduct(items));
-    navigate(`/ShopHome/api/${items.title}`);
+    navigate(`/ShopHome/${items.id}`);
   };
 
   useEffect(() => {
